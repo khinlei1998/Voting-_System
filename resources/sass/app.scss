@@ -1,0 +1,30 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+// adminlte
+@import '~admin-lte/dist/css/adminlte.css';
+
+.photo {
+    width:40px;
+    height: 90px;
+}
+.product_dis{
+    width:50px;
+    height:60px;
+}
+.card-img-top{
+    height:160px;
+}
+.btn-danger{
+   
+    
+    
+     display: inline-block;
+}
