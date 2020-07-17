@@ -21,17 +21,17 @@ class ProductController extends Controller
     }
     public function index()
     {
-        $products=Product::all();
-        if(session('success')){
-            Alert::success('Success', 'Product Created Successfully');
-        }if(session('noti')){
-            Alert::success('Success', 'Product Updated Successfully');
-        }if(session('delete')){
-            Alert::success('Success', 'Product Deleted Successfully');
+        // $products=Product::all();
+        // if(session('success')){
+        //     Alert::success('Success', 'Product Created Successfully');
+        // }if(session('noti')){
+        //     Alert::success('Success', 'Product Updated Successfully');
+        // }if(session('delete')){
+        //     Alert::success('Success', 'Product Deleted Successfully');
 
-        }
+        // }
      
-        return view('product.index',compact(['products']));
+        return view('product.index');
 
         // if($request->has('download')){
         //     $pdf = PDF::loadView('product.index');
