@@ -38,7 +38,7 @@ class ResultController extends Controller
            
 
         //  dd($products_id);
-            return view('result_voting.index',compact('products_id'));
+            return view('Result_voting.index',compact('products_id'));
     }
 
     /**

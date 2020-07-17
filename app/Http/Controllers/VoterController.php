@@ -29,7 +29,7 @@ class VoterController extends Controller
         }
         if(session('voter_cancel')){
             Alert::warning('Fail','Sorry,U voted once');        }
-        return view('voting.index',compact('products'));
+        return view('Voting.index',compact('products'));
     }
 
     /**
