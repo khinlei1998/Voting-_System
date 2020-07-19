@@ -184,7 +184,7 @@ img{
         @foreach($products as $product)
           <form action="{{url('vote')}}" method="GET">
             @csrf 
-            <div data-ix="blog-card" class="w-clearfix w-preserve-3d promo-card" style="margin-right:40px;float:left;"><img width="100%"src="{{Storage::url($product->image)}}">
+            <div data-ix="blog-card" class="w-clearfix w-preserve-3d promo-card" style="margin-right:40px;float:left;"><img width="100%"src="{{$product->image}}">
             <div class="blog-bar color-pink"></div>
             <div class="blog-post-text">
             {{$product->name}}
