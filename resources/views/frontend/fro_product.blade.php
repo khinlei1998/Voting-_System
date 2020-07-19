@@ -59,7 +59,7 @@ body {
   margin-top: 19px;
   margin-right: 20px;
   margin-left: 20px;
-  font-size: 17px;
+  font-size: 14px;
   text-transform: uppercase;
 }
 
