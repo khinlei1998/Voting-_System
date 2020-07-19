@@ -155,6 +155,10 @@ body {
 img{
     height:60%;
 }
+.btn-danger{
+  float: right;
+  margin-right:40%;
+}
     </style>
 
 
@@ -187,22 +191,24 @@ img{
         @foreach($products as $product)
           <form action="{{url('vote')}}" method="GET">
             @csrf 
-            <div data-ix="blog-card" class="w-clearfix w-preserve-3d promo-card" style="margin-right:40px;float:left;"><img width="100%"src="{{$product->image}}">
+            <div data-ix="blog-card" class="w-clearfix w-preserve-3d promo-card" style="margin-right:40px;float:left;">
+            <img width="100%"src="{{$product->image}}">
             <div class="blog-bar color-pink"></div>
             <div class="blog-post-text">
-            {{$product->name}}
+               {{$product->name}}
                  <input type="hidden" name="product_id" value="{{$product->product_id}}">
                  <input type="hidden" name="vote_id" value="{{$i++}}">
                  <input type="hidden" name="vote_id" value="{{$i++}}">
                  <input type="hidden" name="user_id" value="{{auth::user()->id}}">
 
-                <div class="blog-description pink-text">{{$product->description}}</div>
+                <p class="blog-description pink-text">{{Str::limit($product->description,60)}}
             </div>
         
-            
-            <button class="btn btn-danger" type="submit" style="margin-top:20px;"><i class="fa fa-heart"></i></button>
-            
+            <button class="btn btn-danger" type="submit" ><i class="fa fa-heart"></i></button>
+           
+           
             </div>
+          
         </form>
         @endforeach
         

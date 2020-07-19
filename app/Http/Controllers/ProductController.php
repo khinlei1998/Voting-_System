@@ -146,7 +146,7 @@ class ProductController extends Controller
        }
        $product->name=$request->name;
        $product->description=$request->description;
-       $product->image=$img;
+       $product->image=$image;
        $product->save();
        return redirect()->route("product.index")->with('noti','updated');
     }

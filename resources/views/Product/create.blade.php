@@ -17,7 +17,7 @@
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Description</label>
- <textarea class="form-control" name="description" placeholder="Enter Description"></textarea>
+ <textarea class="form-control" name="description" placeholder="Enter Description"   value="{{ old('description') }}"></textarea>
     @error('description')
 						<div class="text-danger" style="">{{ $message }}</div>
 			@enderror

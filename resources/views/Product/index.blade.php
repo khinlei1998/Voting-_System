@@ -169,7 +169,8 @@
 
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$product->name}}</td>
-                                        <td>{{$product->description}}</td>
+                                        <td>{{Str::limit($product->description,10)}}</td>
+                                        
                                         <td><img class="product_dis"src="{{$product->image}}" style="height:60px;" ></td>
 
                                         <td class="">
