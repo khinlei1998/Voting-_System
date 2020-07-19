@@ -201,7 +201,7 @@ img{
                  <input type="hidden" name="vote_id" value="{{$i++}}">
                  <input type="hidden" name="user_id" value="{{auth::user()->id}}">
 
-                <p class="blog-description pink-text">{{Str::limit($product->description,60)}}
+                <p class="blog-description pink-text">{{Str::limit($product->description,50)}}
             </div>
         
             <button class="btn btn-danger" type="submit" ><i class="fa fa-heart"></i></button>
