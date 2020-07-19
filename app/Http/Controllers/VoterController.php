@@ -16,20 +16,20 @@ class VoterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
-        $authuser=Auth::user()->id;
+        // $authuser=Auth::user()->id;
         $products=Product::all();
         if(session('voter')){
             Alert::success('Success', 'Your Voting is successful');
         }
         if(session('voter_cancel')){
             Alert::warning('Fail','Sorry,U voted once');        }
-        return view('frontend.fro_product',compact('products','authuser'));
+        return view('frontend.fro_product',compact('products'));
     }
 
     /**
