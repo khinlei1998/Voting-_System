@@ -170,7 +170,7 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$product->name}}</td>
                                         <td>{{$product->description}}</td>
-                                        <td><img class="product_dis"src="{{Storage::url($product->image)}}" style="height:60px;" ></td>
+                                        <td><img class="product_dis"src="{{$product->image}}" style="height:60px;" ></td>
 
                                         <td class="">
                                         <a href="{{ route('product.edit',$product->product_id)}}">
