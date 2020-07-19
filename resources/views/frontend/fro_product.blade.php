@@ -39,7 +39,7 @@ body {
 .blog-bar {
   width: 4px;
   height: 45px;
-  margin-top: 16px;
+  margin-top: 20px;
   float: left;
 }
 
@@ -194,7 +194,7 @@ img{
                  <input type="hidden" name="product_id" value="{{$product->product_id}}">
                  <input type="hidden" name="vote_id" value="{{$i++}}">
                  <input type="hidden" name="vote_id" value="{{$i++}}">
-                 <input type="text" name="user_id" value="{{auth::user()->id}}">
+                 <input type="hidden" name="user_id" value="{{auth::user()->id}}">
 
                 <div class="blog-description pink-text">{{$product->description}}</div>
             </div>
