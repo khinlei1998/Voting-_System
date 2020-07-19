@@ -35,7 +35,7 @@ class ProductController extends Controller
 
         }
      
-        return view('product.index',compact(['products']));
+        return view('Product.index',compact(['products']));
 
         // if($request->has('download')){
         //     $pdf = PDF::loadView('product.index');
