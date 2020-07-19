@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use PDF;
 Use Alert;
+use App\Voter;
 
 class ProductController extends Controller
 {
@@ -29,9 +30,12 @@ class ProductController extends Controller
         }if(session('delete')){
             Alert::success('Success', 'Product Deleted Successfully');
 
+        }if(session('fail')){
+            Alert::error('Fail', 'This product has already been voted by user ');
+
         }
      
-        return view('Product.index',compact(['products']));
+        return view('product.index',compact(['products']));
 
         // if($request->has('download')){
         //     $pdf = PDF::loadView('product.index');
@@ -48,7 +52,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('product.create');
+        return view('Product.create');
     }
 
   
@@ -61,8 +65,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-       
-       
+    //    dd($request);
+        $request->validate([
+            'name' => 'required|min:2',
+            'description'=>'required',
+            'image' => 'required|mimes:jpeg,jpg,png',
+           
+        ]);
         if($request->hasFile('image')){
            $img=$request->image->store("img", "public");
            
@@ -70,7 +79,9 @@ class ProductController extends Controller
      
        $product=new product();
        $product->name=$request->name;
+      
        $product->image=$img;
+       $product->description=$request->description;
        $product->save();
      
         return redirect()->route('product.index')->with('success','created');
@@ -96,7 +107,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
      
-        return view('product.edit',compact('product'));
+        return view('Product.edit',compact('product'));
     }
 
     /**
@@ -108,7 +119,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-      
+        $request->validate([
+            'name' => 'required|min:2',
+            
+        'description'=>'required',
+           
+        ]);
        if($request->hasfile('image')){
         $img=$request->image->store("img", "public");
 
@@ -116,6 +132,7 @@ class ProductController extends Controller
        $img=$product->image;
        }
        $product->name=$request->name;
+       $product->description=$request->description;
        $product->image=$img;
        $product->save();
        return redirect()->route("product.index")->with('noti','updated');
@@ -131,9 +148,20 @@ class ProductController extends Controller
     {
        
         $product = Product::findOrFail($id);
+       
+        $bb=$product->product_id;
+        // dd($bb);
+       $del_product=Voter::where('product_id',$bb)->get();
+    //   dd($del_product);
+    if( $del_product){
+        $product->delete();
 
-    $product->delete();
+        return redirect()->route("product.index")->with('delete','deleted');
+      
+    }else{
+        return redirect()->back()->with('fail','fail');
+    }
 
-    return redirect()->route("product.index")->with('delete','deleted');;
+  
     }
 }

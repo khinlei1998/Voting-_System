@@ -12,15 +12,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <title>Voting System</title>
   <link rel="stylesheet" href="/css/app.css">
-
+ 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
- 
-
+  
  
 </head>
 <body class="hold-transition sidebar-mini">
@@ -84,16 +83,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
           @endif
-          <li class="nav-item">
-            <a href="{{route('vote.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <img src="https://img.icons8.com/flat_round/30/000000/vote-badge.png"/>
-              <p>
-                Voting
-                
-              </p>
-            </a>
-          </li>
+        
           @if(auth::user()->name=="admin")
           <li class="nav-item">
             <a href="{{route('result.index')}}" class="nav-link">

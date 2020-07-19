@@ -16,20 +16,20 @@ class VoterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     public function index()
     {
-
+        
         $products=Product::all();
         if(session('voter')){
             Alert::success('Success', 'Your Voting is successful');
         }
         if(session('voter_cancel')){
             Alert::warning('Fail','Sorry,U voted once');        }
-        return view('Voting.index',compact('products'));
+        return view('frontend.fro_product',compact('products'));
     }
 
     /**
@@ -50,6 +50,8 @@ class VoterController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
+        
     
          $user_id=DB::table('voters')->where('user_id',Auth::user()->id)->first();
       if($user_id){
@@ -62,7 +64,7 @@ class VoterController extends Controller
                 $vote->user_id=Auth::user()->id;
                 $vote->status=1;
                 $vote->save();
-                return redirect()->route('vote.index')->with('voter','vote success');
+                return redirect()->back()->with('voter','vote success');
         }
       
     }

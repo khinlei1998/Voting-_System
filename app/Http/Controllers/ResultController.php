@@ -14,6 +14,10 @@ class ResultController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         // $products=Product::all();
@@ -35,10 +39,10 @@ class ResultController extends Controller
                      ->select('products.*', DB::raw("count(voters.product_id) as votercount"))
                      ->groupBy('product_id')
                      ->get();
-           
+                     $all_product = DB::table('products')->count();
 
-        //  dd($products_id);
-            return view('Result_voting.index',compact('products_id'));
+        //    dd($all_product);
+            return view('Result_voting.index',compact('products_id','all_product'));
     }
 
     /**

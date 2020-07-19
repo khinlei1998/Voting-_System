@@ -4,11 +4,23 @@
 @csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Name</label>
-    <input type="text" class="form-control" id="" name="name" placeholder="Enter name">
-   
+    <input type="text" class="form-control" id="" name="name" placeholder="Enter name"  value="{{ old('name') }}">
+    @error('name')
+						<div class="text-danger" style="">{{ $message }}</div>
+			@enderror
   </div>
   <div class="form-group">
     <input type="file" class="form-control" name="image">
+         @error('image')
+						<div class="text-danger" style="">{{ $message }}</div>
+						@enderror
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Description</label>
+ <textarea class="form-control" name="description" placeholder="Enter Description"></textarea>
+    @error('description')
+						<div class="text-danger" style="">{{ $message }}</div>
+			@enderror
   </div>
  
   <button type="submit" class="btn btn-primary">Submit</button>

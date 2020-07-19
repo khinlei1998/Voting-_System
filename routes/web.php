@@ -13,17 +13,24 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
-Route::get('/', function () {
-    return view('welcome');
+
+// Route::get('/', function () {
+//     return view('frontend.fro_product');
+// });
+// Route::resource('vote', 'VoterController');
+Route::resource('/','VoterController');
+Route::get('/error',function(){
+    return view('frontend.permission');
 });
-Route::resource('/product', 'ProductController')->middleware('auth');
-Route::resource('/vote', 'VoterController');
-Route::resource('/result', 'ResultController');
+Route::resource('/product', 'ProductController')->middleware('is_admin');
+Route::get('/vote', 'VoterController@store');
+Route::resource('/result', 'ResultController')->middleware('is_admin');;
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
-Route::post('/pagination', 'ProductController@fetch');
 
 
+Auth::routes();
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/custom','\App\Http\Controllers\Auth\LoginController@custom')->name('home');
+

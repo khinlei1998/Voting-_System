@@ -8,7 +8,7 @@ class Product extends Model
 
 {
     protected $primaryKey = 'product_id';
-    protected $fillable=['name','image'];
+    protected $fillable=['name','image','description'];
 
     public function vote()
     {

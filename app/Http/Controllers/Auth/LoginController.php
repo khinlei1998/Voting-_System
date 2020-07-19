@@ -27,7 +27,14 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo ='/';
+    protected function authenticated($request, $user)
+    {
+        if(Auth::user()->name == 'admin') {
+            return redirect()->intended('/product');
+        }
+        return redirect('/');
+    }  
 
     /**
      * Create a new controller instance.
@@ -43,5 +50,14 @@ class LoginController extends Controller
       
         Auth::logout();
         return redirect('/login');
+      }
+
+      public function custom(Request $request) {
+        if(Auth::user()->name == 'admin'){
+            return redirect('/product');
+        }
+       else{
+           return redirect('/');
+       }
       }
 }

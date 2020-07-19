@@ -90,16 +90,7 @@
                   </a>
                 </li>
                 @endif
-                <li class="nav-item">
-                  <a href="{{route('vote.index')}}" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
-                    <img src="https://img.icons8.com/flat_round/30/000000/vote-badge.png"/>
-                    <p>
-                      Voting
-                      
-                    </p>
-                  </a>
-                </li>
+              
                 @if(auth::user()->name=="admin")
                 <li class="nav-item">
                   <a href="{{route('result.index')}}" class="nav-link">
@@ -166,6 +157,7 @@
                                       <tr>
                                         <th>No</th>
                                         <th>Name</th>
+                                        <th>Description</th>
                                         <th>Image</th>
                                       <th>Action</th>
                                       </tr>
@@ -177,7 +169,8 @@
 
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$product->name}}</td>
-                                        <td><img class="product_dis"src="{{Storage::url($product->image)}}" style="height:40px;" ></td>
+                                        <td>{{$product->description}}</td>
+                                        <td><img class="product_dis"src="{{Storage::url($product->image)}}" style="height:60px;" ></td>
 
                                         <td class="">
                                         <a href="{{ route('product.edit',$product->product_id)}}">
@@ -202,6 +195,7 @@
                                       <tr>
                                       <th>No</th>
                                     <th>Name</th>
+                                    <th>Description</th>
                                     <th>Image</th>
                                     <th>Action</th>
                                       </tr>
