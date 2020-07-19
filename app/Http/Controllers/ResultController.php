@@ -29,6 +29,7 @@ class ResultController extends Controller
                     //  ->groupBy('product_id')
                     //  ->get();
                     //  $all_product = DB::table('products')->count();
+
                     // $products_id =DB::table('voters')
                     // ->join('products', 'products.product_id', '=', 'voters.product_id')
                     // ->select('products.*', DB::raw("count(voters.product_id) as votercount"))
@@ -37,6 +38,7 @@ class ResultController extends Controller
                    
                     $all_product = DB::table('products')->count();
                     $products_id = DB::table('voters')
+                    ->join('products', 'products.product_id', '=', 'voters.product_id')
                      ->select(DB::raw('count(voters.product_id) as voter_count'))
                    
                      ->groupBy('product_id')
