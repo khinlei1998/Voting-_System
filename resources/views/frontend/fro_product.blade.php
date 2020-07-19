@@ -181,6 +181,9 @@ img{
       <!-- Cards First Row --->
       <h3>Vote Here</h3>
       <div class="promo-flex ">
+      <?php
+      $i=1;
+      ?>
         @foreach($products as $product)
           <form action="{{url('vote')}}" method="GET">
             @csrf 
@@ -189,6 +192,8 @@ img{
             <div class="blog-post-text">
             {{$product->name}}
                  <input type="hidden" name="product_id" value="{{$product->product_id}}">
+                 <input type="text" name="vote_id" value="{{$i++}}">
+
                 <div class="blog-description pink-text">{{$product->description}}</div>
             </div>
         

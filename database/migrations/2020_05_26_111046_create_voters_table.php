@@ -14,7 +14,7 @@ class CreateVotersTable extends Migration
     public function up()
     {
         Schema::create('voters', function (Blueprint $table) {
-            $table->increments('vote_id');
+            $table->integer('vote_id');
             $table->unsignedInteger('product_id')->nullable();
             $table->foreign('product_id')->references('product_id')->on('products');
             $table->unsignedInteger('user_id')->nullable();
