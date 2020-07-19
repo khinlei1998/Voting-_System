@@ -23,7 +23,7 @@ Route::get('/error',function(){
     return view('frontend.permission');
 });
 Route::resource('/product', 'ProductController')->middleware('is_admin');
-Route::get('/vote', 'VoterController@store');
+Route::get('/vote', 'VoterController@store')->middleware('auth');
 Route::resource('/result', 'ResultController')->middleware('is_admin');;
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
