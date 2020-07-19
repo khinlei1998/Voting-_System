@@ -14,7 +14,7 @@
   
     <div class="col-md-11" style="border: 1px solid #d9d9d9;">
    
-    @if($products_id != [])
+                                                                                                                                                                          
         @foreach($products_id as $p_id)
        
        

@@ -10,8 +10,8 @@ class Product extends Model
     protected $primaryKey = 'product_id';
     protected $fillable=['name','image','description'];
 
-    public function vote()
+    public function users()
     {
-        return $this->hasMany('App\Voter');
+        return $this->belongsToMany("App\User");
     }
 }

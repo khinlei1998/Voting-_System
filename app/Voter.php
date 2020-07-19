@@ -6,19 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Voter extends Model
 {
-    // protected $primaryKey='vote_id';
+    protected $primaryKey='vote_id';
     protected $fillable = [
-        'vote_id','user_id', 'product_id', 
+        'user_id', 'product_id', 
     ];
 
-    public function user()
-    {
-        return $this->belongsTo('App\User');
-    }
+    // public function user()
+    // {
+    //     return $this->belongsTo('App\User');
+    // }
 
-    public function product()
-    {
-        return $this->belongsTo('App\Product');
-    }
+    // public function product()
+    // {
+    //     return $this->belongsTo('App\Product');
+    // }
 }
 

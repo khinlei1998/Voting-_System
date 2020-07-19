@@ -18,9 +18,9 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
-    public function vote()
+    public function products()
     {
-        return $this->hasOne('App\Voter');
+        return $this->belongsToMany("App\Product");
     }
     /**
      * The attributes that should be hidden for arrays.

@@ -20,35 +20,21 @@ class ResultController extends Controller
     }
     public function index()
     {
-        // $products=Product::all();
-        // $products_id=Voter::select('product_id')->get();
-        // SELECT `product_id`,COUNT(*) FROM `voters` GROUP BY `product_id`
-        // $products_id=DB::table("voters")
-
-	    // ->select("voters.product_id")
-
-	 
-      
-	    // ->groupBy("voters.product_id")
-        // ->count()
-	    // ->get();
-
+       
+            // $products=Product::all();
      
                      $products_id =DB::table('voters')
                      ->join('products', 'products.product_id', '=', 'voters.product_id')
-                     ->select('products.*', DB::raw("count(voters.product_id) as votercount"))                  
-                     ->get()
-                     ->groupBy('votercount');
-                    //  $products_id =Voter::where()
-                    //  ->join('products', 'products.product_id', '=', 'voters.product_id')
-                    //  ->select('products.*', DB::raw("count(voters.product_id) as votercount"))
-                    //  ->groupBy('product_id')
-                    //  ->get();
-
+                     ->select('products.*', DB::raw("count(voters.product_id) as votercount"))
+                     ->groupBy('product_id')
+                     ->get();
                      $all_product = DB::table('products')->count();
 
+                  
+                    
+
         //    dd($all_product);
-            return view('Result_voting.index',compact('products_id','all_product'));
+             return view('Result_voting.index',compact('products_id','all_product'));
     }
 
     /**
