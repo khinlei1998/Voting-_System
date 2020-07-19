@@ -36,9 +36,15 @@ class ResultController extends Controller
      
                      $products_id =DB::table('voters')
                      ->join('products', 'products.product_id', '=', 'voters.product_id')
-                     ->select('products.*', DB::raw("count(voters.product_id) as votercount"))
-                     ->groupBy('product_id')
-                     ->get();
+                     ->select('products.*', DB::raw("count(voters.product_id) as votercount"))                  
+                     ->get()
+                     ->groupBy('votercount');
+                    //  $products_id =Voter::where()
+                    //  ->join('products', 'products.product_id', '=', 'voters.product_id')
+                    //  ->select('products.*', DB::raw("count(voters.product_id) as votercount"))
+                    //  ->groupBy('product_id')
+                    //  ->get();
+
                      $all_product = DB::table('products')->count();
 
         //    dd($all_product);
