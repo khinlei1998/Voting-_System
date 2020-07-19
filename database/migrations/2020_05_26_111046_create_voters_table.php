@@ -19,7 +19,7 @@ class CreateVotersTable extends Migration
             $table->foreign('product_id')->references('product_id')->on('products');
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('status')->default('0');
+            
             $table->timestamps();
         });
     }

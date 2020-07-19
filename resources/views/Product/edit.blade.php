@@ -11,7 +11,7 @@
 			@enderror
   </div>
   <div>
-  <img class="product_dis" src="{{Storage::url($product->image)}}">
+  <img class="product_dis" src="{{$product->image}}">
   </div>
   <div class="form-group">
     <input type="file" class="form-control" name="image">

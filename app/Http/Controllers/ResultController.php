@@ -63,11 +63,11 @@ class ResultController extends Controller
      */
     public function store(Request $request)
     {
-        $status =DB::table('voters')->where('status',1)->get();
-        // dd($status);
-        $status->delete();
+        // $status =DB::table('voters')->where('status',1)->get();
+        // // dd($status);
+        // $status->delete();
     
-        return redirect()->route("result.index");
+        // return redirect()->route("result.index");
     }
 
     /**

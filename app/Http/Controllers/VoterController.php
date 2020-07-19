@@ -50,7 +50,7 @@ class VoterController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+        //  dd($request);
         
     
          $user_id=DB::table('voters')->where('user_id',Auth::user()->id)->first();
