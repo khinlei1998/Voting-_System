@@ -6,14 +6,14 @@
 
  <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> 
-<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/bootstrap.min.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/font-awesome.min.css')}}"/>
-<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/simple-line-icons.css')}}"/>
-<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/animate.css')}}"/>
-<link rel="stylesheet" type="text/css" href="{{asset('frontend/style.css')}}"/>
-<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/owl.carousel.css')}}"/>
-<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/owl.theme.css')}}"/>
-<link rel="stylesheet" type="text/css" href="{{asset('frontend/css/owl.transitions.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{secure_asset('frontend/css/bootstrap.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{secure_asset('frontend/css/font-awesome.min.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{secure_asset('frontend/css/simple-line-icons.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{secure_asset('frontend/css/animate.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{secure_asset('frontend/style.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{secure_asset('frontend/css/owl.carousel.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{secure_asset('frontend/css/owl.theme.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{secure_asset('frontend/css/owl.transitions.css')}}"/>
 
 <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,100,200,300,500,600,800,900' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps:400,700' rel='stylesheet' type='text/css'>
@@ -164,11 +164,11 @@
   </div>
   
 </footer>
-<script src="{{asset('frontend/js/jquery.min.js')}}"></script> 
-<script src="{{asset('frontend/js/bootstrap.min.js')}}"></script> 
-<script type="text/javascript" src="{{asset('frontend/js/owl.carousel.min.js')}}"></script> 
-<script type="text/javascript" src="{{asset('frontend/js/jquery.countTo.js')}}"></script> 
-<script type="text/javascript" src="{{asset('frontend/js/jquery.waypoints.min.js')}}"></script> 
+<script src="{{secure_asset('frontend/js/jquery.min.js')}}"></script> 
+<script src="{{secure_asset('frontend/js/bootstrap.min.js')}}"></script> 
+<script type="text/javascript" src="{{secure_asset('frontend/js/owl.carousel.min.js')}}"></script> 
+<script type="text/javascript" src="{{secure_asset('frontend/js/jquery.countTo.js')}}"></script> 
+<script type="text/javascript" src="{{secure_asset('frontend/js/jquery.waypoints.min.js')}}"></script> 
 <script>
 
 </script>
