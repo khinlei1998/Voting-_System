@@ -39,7 +39,7 @@ body {
 .blog-bar {
   width: 4px;
   height: 45px;
-  margin-top: 20px;
+  margin-top: 16px;
   float: left;
 }
 
