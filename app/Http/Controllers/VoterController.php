@@ -60,6 +60,7 @@ class VoterController extends Controller
         else{
                 
                 $vote=new Voter;
+                $vote->vote_id=1;
                 $vote->product_id=$request->product_id;
                 $vote->user_id=Auth::user()->id;
                 $vote->status=1;
