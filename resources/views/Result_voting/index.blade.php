@@ -14,18 +14,18 @@
   
     <div class="col-md-11" style="border: 1px solid #d9d9d9;">
    
-                                                                                                                                                                          
+    @if($products_id)
         @foreach($products_id as $p_id)
        
        
-            <p>{{$p_id->name}}</p>
+           
             <div class="progress mb-3">
                     <div class="progress-bar progress-bar-striped progress-bar-animated" 
                         role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
-                        style="width: {{$p_id->votercount*100/$all_product}}%">
+                        style="width: {{$p_id->voter_count*100/$all_product}}%">
                         
                     </div>
-                    <!-- <p style="margin-top:8px;margin-left:5px;">{{$p_id->votercount*100/$all_product}}%"</p> -->
+                    <p style="margin-top:8px;margin-left:5px;">{{$p_id->voter_count*100/$all_product}}%"</p>
             </div>
    
         @endforeach

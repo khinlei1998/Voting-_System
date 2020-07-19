@@ -29,16 +29,22 @@ class ResultController extends Controller
                     //  ->groupBy('product_id')
                     //  ->get();
                     //  $all_product = DB::table('products')->count();
-                    $products_id =DB::table('voters')
-                    ->join('products', 'products.product_id', '=', 'voters.product_id')
-                    ->select('products.*', DB::raw("count(voters.product_id) as votercount"))
-                    ->groupBy('votercount')
-                    ->get();
+                    // $products_id =DB::table('voters')
+                    // ->join('products', 'products.product_id', '=', 'voters.product_id')
+                    // ->select('products.*', DB::raw("count(voters.product_id) as votercount"))
+                    // ->groupBy('votercount')
+                    // ->get();
+                   
                     $all_product = DB::table('products')->count();
+                    $products_id = DB::table('voters')
+                     ->select(DB::raw('count(voters.product_id) as voter_count'))
+                   
+                     ->groupBy('product_id')
+                     ->get();
                   
                     
 
-        //    dd($all_product);
+        //  dd($products_id);
              return view('Result_voting.index',compact('products_id','all_product'));
     }
 
