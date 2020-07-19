@@ -21,20 +21,7 @@ class ResultController extends Controller
     public function index()
     {
        
-            // $products=Product::all();
-     
-                    //  $products_id =DB::table('voters')
-                    //  ->join('products', 'products.product_id', '=', 'voters.product_id')
-                    //  ->select('products.*', DB::raw("count(voters.product_id) as votercount"))
-                    //  ->groupBy('product_id')
-                    //  ->get();
-                    //  $all_product = DB::table('products')->count();
-
-                    // $products_id =DB::table('voters')
-                    // ->join('products', 'products.product_id', '=', 'voters.product_id')
-                    // ->select('products.*', DB::raw("count(voters.product_id) as votercount"))
-                    // ->groupBy('votercount')
-                    // ->get();
+           
                    
                     $all_product = DB::table('products')->count();
                     $voter_id = DB::table('voters')
@@ -51,7 +38,7 @@ class ResultController extends Controller
 
 
 
-        //  dd($products_id);
+        
              return view('Result_voting.index',compact('products_id','all_product'));
     }
 
@@ -73,11 +60,6 @@ class ResultController extends Controller
      */
     public function store(Request $request)
     {
-        // $status =DB::table('voters')->where('status',1)->get();
-        // // dd($status);
-        // $status->delete();
-    
-        // return redirect()->route("result.index");
     }
 
     /**
