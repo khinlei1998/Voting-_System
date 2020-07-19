@@ -192,7 +192,9 @@ img{
             <div class="blog-post-text">
             {{$product->name}}
                  <input type="hidden" name="product_id" value="{{$product->product_id}}">
-                 <input type="text" name="vote_id" value="{{$i++}}">
+                 <input type="hidden" name="vote_id" value="{{$i++}}">
+                 <input type="hidden" name="vote_id" value="{{$i++}}">
+                 <input type="hidden" name="user_id" value="{{$authuser}}">
 
                 <div class="blog-description pink-text">{{$product->description}}</div>
             </div>

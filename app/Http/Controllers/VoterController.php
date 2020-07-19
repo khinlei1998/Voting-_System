@@ -22,14 +22,14 @@ class VoterController extends Controller
     // }
     public function index()
     {
-        
+        $authuser=Auth::user()->id;
         $products=Product::all();
         if(session('voter')){
             Alert::success('Success', 'Your Voting is successful');
         }
         if(session('voter_cancel')){
             Alert::warning('Fail','Sorry,U voted once');        }
-        return view('frontend.fro_product',compact('products'));
+        return view('frontend.fro_product',compact('products','authuser'));
     }
 
     /**
@@ -50,9 +50,10 @@ class VoterController extends Controller
      */
     public function store(Request $request)
     {
-        //  dd($request);
+        //  dd(Auth::user());
         
         $authuser=Auth::user()->id;
+        // dd( $authuser);
          $user_id=DB::table('voters')->where('user_id',$authuser)->first();
       if($user_id){
         return redirect()->back()->with('voter_cancel','vote fail');
@@ -70,7 +71,7 @@ class VoterController extends Controller
                 Voter::create([
                     'product_id' => request('product_id'),
                     'vote_id' => request('vote_id'),
-                    'user_id' =>$authuser,
+                    'user_id' => request('user_id'),
                 ]);
                
                  return redirect()->back()->with('voter','vote success');
