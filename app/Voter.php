@@ -8,7 +8,7 @@ class Voter extends Model
 {
     protected $primaryKey = 'vote_id ';
     protected $fillable = [
-        'vote_id','user_id', 'product_id','status', 
+        'user_id', 'product_id', 
     ];
 
     public function user()

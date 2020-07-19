@@ -59,13 +59,20 @@ class VoterController extends Controller
       }
         else{
                 
-                $vote=new Voter;
-                $vote->vote_id=1;
-                $vote->product_id=$request->product_id;
-                $vote->user_id=Auth::user()->id;
-                $vote->status=1;
-                $vote->save();
-                return redirect()->back()->with('voter','vote success');
+                // $vote=new Voter;
+                // $vote->product_id=$request->product_id;
+                // $vote->user_id=Auth::user()->id;
+                
+                // $vote->save();
+                $authuser=Auth::user()->id;
+               
+
+                Voter::create([
+                    'product_id' => request('product_id'),
+                    'user_id' =>$authuser,
+                ]);
+               
+                 return redirect()->back()->with('voter','vote success');
         }
       
     }
