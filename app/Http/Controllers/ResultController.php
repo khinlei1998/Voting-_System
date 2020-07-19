@@ -37,7 +37,7 @@ class ResultController extends Controller
                      })->get();
 
 
-
+                    // dd($products_id);
         
              return view('Result_voting.index',compact('products_id','all_product'));
     }

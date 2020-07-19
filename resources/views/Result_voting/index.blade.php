@@ -14,7 +14,13 @@
   
     <div class="col-md-11" style="border: 1px solid #d9d9d9;">
    
-    @if($products_id!=[])
+   @if($products_id->isEmpty())
+   <div class="alert alert-primary" role="alert">
+           <p>Not Voted Yet!</p>
+        </div>
+        @else
+        
+
         @foreach($products_id as $p_id)
        
        
@@ -25,14 +31,10 @@
                         style="width: {{$p_id->votercount*100/$all_product}}%">
                         
                     </div>
-                    <p style="margin-top:8px;margin-left:5px;">{{$p_id->votercount*100/$all_product}}%"</p>
+                    <!-- <p style="margin-top:8px;margin-left:5px;">{{$p_id->votercount*100/$all_product}}%"</p> -->
             </div>
    
         @endforeach
-        @else
-        <div class="alert alert-primary" role="alert">
-           <p>Not Voted Yet!</p>
-        </div>
         @endif   
     
  
