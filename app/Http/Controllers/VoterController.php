@@ -52,8 +52,8 @@ class VoterController extends Controller
     {
         //  dd($request);
         
-    
-         $user_id=DB::table('voters')->where('user_id',Auth::user()->id)->first();
+        $authuser=Auth::user()->id;
+         $user_id=DB::table('voters')->where('user_id',$authuser)->first();
       if($user_id){
         return redirect()->back()->with('voter_cancel','vote fail');
       }
@@ -64,7 +64,7 @@ class VoterController extends Controller
                 // $vote->user_id=Auth::user()->id;
                 
                 // $vote->save();
-                $authuser=Auth::user()->id;
+               
                
 
                 Voter::create([
