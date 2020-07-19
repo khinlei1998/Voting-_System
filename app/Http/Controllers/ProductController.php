@@ -132,10 +132,16 @@ class ProductController extends Controller
         'description'=>'required',
            
         ]);
-       if($request->hasfile('image')){
-        $img=$request->image->store("img", "public");
-
-       }else{
+        if($request->hasFile('image')){
+            //    $img=$request->image->store("img", "public");
+            $image=$request->image;
+            $name = $image->getClientOriginalName();
+            $image->move(public_path().'/image',$name);
+    
+            $image = '/image/'.$name;
+               
+            }
+            else{
        $img=$product->image;
        }
        $product->name=$request->name;
