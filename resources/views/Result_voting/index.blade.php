@@ -31,7 +31,7 @@
                         style="width: {{$p_id->votercount*100/$all_product}}%">
                         
                     </div>
-                    <!-- <p style="margin-top:8px;margin-left:5px;">{{$p_id->votercount*100/$all_product}}%"</p> -->
+                    <p style="margin-top:8px;margin-left:5px;">{{$p_id->votercount*100/$all_product}}%"</p>
             </div>
    
         @endforeach
