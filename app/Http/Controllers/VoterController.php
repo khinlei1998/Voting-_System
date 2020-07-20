@@ -71,7 +71,7 @@ class VoterController extends Controller
                 Voter::create([
                     'product_id' => request('product_id'),
                     'vote_id' => request('vote_id'),
-                    'user_id' => request('user_id'),
+                    'user_id' =>$authuser ,
                 ]);
                
                  return redirect()->back()->with('voter','vote success');
