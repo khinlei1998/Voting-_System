@@ -16,7 +16,7 @@ class IsAdmin
     public function handle($request, Closure $next)
     {
         // dd('hello');
-        if(auth()->user()->name == 'admin'){
+        if(auth()->user()->id == '1'){
             return $next($request);
         };
         return redirect('/error');

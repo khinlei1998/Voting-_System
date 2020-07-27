@@ -30,7 +30,7 @@ class LoginController extends Controller
     // protected $redirectTo ='/';
     protected function authenticated($request, $user)
     {
-        if(Auth::user()->name == 'admin') {
+        if(Auth::user()->id =='1') {
             return redirect()->intended('/product');
         }
         return redirect('/');
@@ -53,7 +53,7 @@ class LoginController extends Controller
       }
 
       public function custom(Request $request) {
-        if(Auth::user()->name == 'admin'){
+        if(Auth::user()->id == '1'){
             return redirect('/product');
         }
        else{
